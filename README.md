@@ -1,2 +1,2 @@
-# rexpeita
-Projeto Integrador 3° Semestre - IFSP Caraguatatuba - Curso de Informática para Internet
+# Carrinho de Compras - CDC
+Teste Inicial
