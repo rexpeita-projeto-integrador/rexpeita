@@ -35,7 +35,7 @@
                     while($product = mysqli_fetch_assoc($result)) :
                     //print_r($product);
                     ?>
-                        <div class="col-sm-4 col-md-3">
+                        <div class="col-sm-6 col-md-5 col-lg-4">
                                 <form method="POST" action="cart.php?action=add&id=<?php echo $product['id']; ?>">
                                     <div class="products">
                                         <a href="<?php echo $product['id']; ?>.php"><img src="<?php echo $product['image']; ?>" class="img-responsive"></a>
@@ -48,9 +48,9 @@
                                         <input type="hidden" name="name" value="<?php echo $product['name']; ?>" />
                                         <input type="hidden" name="price" value="<?php echo $product['price']; ?>" />
                                         <br>
-                                        <a href="#" class="btn btn-danger">
-                                            <input type="submit" name="add_to_cart" class="btn btn-danger" width="200px" height="200px" value="Adicionar ao Carrinho">
-                                            <i class="fas fa-cart-plus"></i>
+                                        <a href="#" class="btn btn-danger" >
+                                            <input type="submit" name="add_to_cart" class="btn btn-danger" id="a"  value="Adicionar ao Carrinho"  style="padding:0px; padding-right:1px;">
+                                            <i class="fas fa-cart-plus"   style="padding:0px; padding-right:1px;"></i>
                                         </a>
                                     </div>
                                     </form>

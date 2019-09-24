@@ -17,13 +17,11 @@
         
         <!-- Banner -->
         <div class="container-fluid" alt="banner" title="Propaganda" style="background-color: #333;">
-            <img src="css/banner.jpg" class='banner' height="90px" width="100%" align='center'>
+            <img src="css/banner.jpg" class='banner' height="45%" width="50%" align='center'>
         </div>
         <!-- Banner End -->
         
         <div class="container-fluid bg-dark" style="height: 30px;"></div>
-        
-    <br>
         
     <!-- Login Form -->    
     <div class="container-fluid">
