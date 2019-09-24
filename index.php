@@ -3,7 +3,7 @@
     
     <head>
         <!-- Page Title -->
-        <title>Rexpeita</title>
+        <title> Rexpeita - INDEX</title>
         
     </head>
     
