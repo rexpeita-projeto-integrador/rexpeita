@@ -1,6 +1,0 @@
-<?php
-
-define("ENVIRONMENT","development");
-
-
-?>
