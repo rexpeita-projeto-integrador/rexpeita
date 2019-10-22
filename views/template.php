@@ -77,7 +77,7 @@
 					          <li><a href="#">Page 1-3</a></li>
 					        </ul>
 					      </li>
-						<li><a href="#">Categoria X</a></li>
+						<li class="col-sm-2"><a href="#">Categoria X</a></li>
 					</ul>
 				</div>
 			</nav>
@@ -85,7 +85,7 @@
 		<section>
 			<div class="container">
 				<div class="row">
-				  <div class="col-sm-3">
+				  <div class="col-sm-5" style="padding-top: 40px;">
 				  	<aside>
 				  		<h1><?php $this->lang->get('FILTER'); ?></h1>
 				  		<div class="filterarea">

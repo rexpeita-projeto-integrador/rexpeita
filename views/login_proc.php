@@ -11,6 +11,8 @@ $email = $_POST['email'];
 $password = $_POST['password'];
 
 $s = "SELECT * FROM login WHERE email = '$email' && password = '$password' ";
+$mandar = "INSERT INTO  users  SET '$id' = id, '$email' = email,  '$password' = password"; 
+
 
 $result = mysqli_query($con, $s);
 
@@ -26,3 +28,4 @@ if($num == 1) {
 }
     
 ?>
+
