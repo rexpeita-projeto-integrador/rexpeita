@@ -98,6 +98,36 @@
             <img class='banner' height="90px" width="100%" align='center'>
         </div>
         <!-- Banner End -->
+        <br>
+       <br>
+       <br>
+        <!-- Slideshow container -->
+        <div class="slideshow-container container">
+
+            <!-- Full-width images with number and caption text -->
+            <div class="mySlides img-max">
+                <div class="numbertext">1 / 3</div>
+                <img src="assets/img_product/carousel/1600.jpg" style="width:500px;">
+                <div class="text">Caption Text</div>
+            </div>
+
+            <div class="mySlides img-max">
+                <div class="numbertext">2 / 3</div>
+                <img src="assets/img_product/carousel/1950x.jpg" style="width:500px;">
+                <div class="text">Caption Two</div>
+            </div>
+
+            <div class="mySlides img-max">
+                <div class="numbertext">3 / 3</div>
+                <img src="assets/img_product/carousel/200ge.jpg" style="width:500px;">
+                <div class="text">Caption Three</div>
+            </div>
+
+            <!-- Next and previous buttons -->
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+        <br>
 
         <div class="container-fluid bg-dark" style="height: 30px;"></div>
 
@@ -126,20 +156,20 @@
         <footer>
             <div class="container">
                 <div class="row">
-                        <nav class="navbar navbar-default navbar-static-top">
-                            <div class="col-sm-4">
-                                <h1><?php $this->lang->get('ONSALEPRODUCTS'); ?></h1>
-                            </div>
-                        </nav>
-                        <nav class="navbar navbar-default navbar-static-top">
+                    <nav class="navbar navbar-default navbar-static-top">
+                        <div class="col-sm-4">
+                            <h1><?php $this->lang->get('ONSALEPRODUCTS'); ?></h1>
+                        </div>
+                    </nav>
+                    <nav class="navbar navbar-default navbar-static-top">
 
-                            <div class="col-sm-4">
-                                <h1><?php $this->lang->get('TOPRATEDPRODUCTS'); ?></h1>
-                                <div>
+                        <div class="col-sm-4">
+                            <h1><?php $this->lang->get('TOPRATEDPRODUCTS'); ?></h1>
+                            <div>
 
-                                </div>
                             </div>
-                        </nav>
+                        </div>
+                    </nav>
 
                 </div>
             </div>
@@ -161,14 +191,7 @@
 
                                     </ul>
                                 </div>
-                                <div class="col-sm-4">
-                                    <h3><?php $this->lang->get('INFORMATION'); ?></h3>
-                                    <ul>
-                                        <li><a href="#">Menu 1</a></li>
-                                        <li><a href="#">Menu 2</a></li>
 
-                                    </ul>
-                                </div>
 
                             </div>
                         </div>
@@ -182,7 +205,7 @@
                         <div class="col-sm-6">
                             <div class="payments">
                                 <img src="<?php echo BASE_URL; ?>assets/images/visa.png" />
-                                <img src="<?php echo BASE_URL; ?>assets/images/visa.png" />
+                                <img src="<?php echo BASE_URL; ?>assets/images/debit-card.png" />
                                 <img src="<?php echo BASE_URL; ?>assets/images/visa.png" />
                                 <img src="<?php echo BASE_URL; ?>assets/images/visa.png" />
                             </div>
@@ -190,14 +213,38 @@
                     </div>
                 </div>
             </div>
+            
         </footer>
         <script type="text/javascript">
             var BASE_URL = '<?php echo BASE_URL; ?>';
 
         </script>
+
         <script type="text/javascript" src="<?php echo BASE_URL; ?>assets/js/jquery-3.4.1.min.js"></script>
+
         <script type="text/javascript" src="<?php echo BASE_URL; ?>assets/js/bootstrap.min.js"></script>
+
         <script type="text/javascript" src="<?php echo BASE_URL; ?>assets/js/script.js"></script>
+
+        <script>
+            var slideIndex = 0;
+            showSlides();
+
+            function showSlides() {
+                var i;
+                var slides = document.getElementsByClassName("mySlides");
+                for (i = 0; i < slides.length; i++) {
+                    slides[i].style.display = "none";
+                }
+                slideIndex++;
+                if (slideIndex > slides.length) {
+                    slideIndex = 1
+                }
+                slides[slideIndex - 1].style.display = "block";
+                setTimeout(showSlides, 2000); // Change image every 2 seconds
+            }
+
+        </script>
 </body>
 
 </html>
