@@ -11,8 +11,9 @@ $id = $_POST['id'];
 $email = $_POST['email'];
 $password = $_POST['password'];
 
-$s = "SELECT * FROM login WHERE email = '$email'";
-
+$sql = "SELECT * FROM login WHERE email = '$email'";
+$mandar = "INSERT INTO  users  SET  '$email' = email,  '$password' = password"; 
+$sql = $this->db->query($mandar);
 $result = mysqli_query($con, $s);
 
 $num = mysqli_num_rows($result);

@@ -2,16 +2,17 @@
 
 session_start();
 
-$con = mysqli_connect('localhost','root','');
+require 'config.php';
 
-mysqli_select_db($con, 'rexpeitav2');
+//$con = mysqli_connect('localhost','root','');
+
+//mysqli_select_db($con, 'rexpeitav2');
 
 $id = $_POST['id'];
 $email = $_POST['email'];
 $password = $_POST['password'];
 
-$s = "SELECT * FROM login WHERE email = '$email' && password = '$password' ";
-$mandar = "INSERT INTO  users  SET '$id' = id, '$email' = email,  '$password' = password"; 
+$s= "SELECT * FROM login WHERE email = '$email' && password = '$password' ";
 
 
 $result = mysqli_query($con, $s);
