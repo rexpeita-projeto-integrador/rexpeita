@@ -2,18 +2,15 @@
 
 session_start();
 
-require 'config.php';
+$con = mysqli_connect('localhost','root','');
 
-//$con = mysqli_connect('localhost','root','');
-
-//mysqli_select_db($con, 'rexpeitav2');
+mysqli_select_db($con, 'rexpeita');
 
 $id = $_POST['id'];
 $email = $_POST['email'];
 $password = $_POST['password'];
 
-$s= "SELECT * FROM login WHERE email = '$email' && password = '$password' ";
-
+$s = "SELECT * FROM users WHERE email = '$email' && password = '$password' ";
 
 $result = mysqli_query($con, $s);
 
@@ -29,4 +26,3 @@ if($num == 1) {
 }
     
 ?>
-
