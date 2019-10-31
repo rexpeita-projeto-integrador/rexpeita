@@ -102,24 +102,24 @@
        <br>
        <br>
         <!-- Slideshow container -->
-        <div class="slideshow-container container">
+        <div class="slideshow-container">
 
             <!-- Full-width images with number and caption text -->
             <div class="mySlides img-max">
                 <div class="numbertext">1 / 3</div>
-                <img src="assets/img_product/carousel/1600.jpg" style="width:500px;">
+                <img src="assets/img_product/carousel/2970x.jpg" style="width:500px;">
                 <div class="text">Caption Text</div>
             </div>
 
             <div class="mySlides img-max">
                 <div class="numbertext">2 / 3</div>
-                <img src="assets/img_product/carousel/1950x.jpg" style="width:500px;">
+                <img src="assets/img_product/carousel/a320m.jpg" style="width:500px;">
                 <div class="text">Caption Two</div>
             </div>
 
             <div class="mySlides img-max">
                 <div class="numbertext">3 / 3</div>
-                <img src="assets/img_product/carousel/200ge.jpg" style="width:500px;">
+                <img src="assets/img_product/carousel/a320.jpg" style="width:500px;">
                 <div class="text">Caption Three</div>
             </div>
 
