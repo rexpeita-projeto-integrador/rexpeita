@@ -1,3 +1,12 @@
+<?php
+
+if((!isset ($_SESSION['email']) == true) && (isset ($_SESSION['password']) == true))
+{
+  header('location:myaccount');
+}
+
+?>
+
 <html>
     
     <head>

@@ -5,19 +5,21 @@ $mysqli = new mysqli('localhost','root','', 'rexpeita') or die(mysqli_error($mys
 $email = $_POST['email'];
 $password = $_POST['password'];
 
-$selecionat = ("SELECT * FROM users WHERE email = $email ");
+$login = "SELECT * FROM users WHERE email = '$email' && password = '$password' ";
 
-$result = mysqli_query($mysqli,$selecionat);
+$result = mysqli_query($mysqli, $login);
 
 $num = mysqli_num_rows($result);
 
-if($num != 1 )
-{
-    header("Location:home");
+if($num == 1) {
+    $_SESSION['email'] = $email;
+    $_SESSION['password'] = $password;
+    header('location:myaccount');
+    
+} else {
+    unset($_SESSION['email']);
+    unset($_SESSION['password']);
+    header('location:login');
 }
-else
-{
-    header("Location:login");
-
-}
+    
 ?>
