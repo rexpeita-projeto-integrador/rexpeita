@@ -17,11 +17,11 @@ class cartController extends controller {
         if(!empty($_POST['cep']))
         {
             $cep = intval($_POST['cep']);
-            $shipping = $cart->shippingCalculate($cepDestination)
+            $shipping = $cart->shippingCalculate($cepDestination);
             {
                 $array = array(
                     'price' => 0,
-                    'data' => '';
+                    'data' => '',
                 );
                 
                 $data = array(

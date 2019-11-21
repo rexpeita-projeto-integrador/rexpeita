@@ -42,8 +42,40 @@ class Cart extends model {
 	}
 
     public function shippingCalculate($cepDestination)
-    {
-        
-    }
+            {
+                $array = array(
+                    'price' => 0,
+                    'data' => '');
+                
+                $data = array(
+                    'nCdServico' => '40010',
+                    'sCepOrigem' => $config['cep-origin'],
+                    'sCepDestino' => $cepDestination,
+                    'nVlPeso' => $nVlPeso,
+                    'nCdFormato' => '1',
+                    'nVlComprimento' => $nVlComprimento,
+                    'nVlAltura' => $nVlAltura,
+                    'nVlLargura' => $nVlLargura,
+                    'nVlDiametro' => $nVlDiametro,
+                    'sCdMaoPropria' => 'N',
+                    'nVlValorDeclarado' => $nVlValorDeclarado,
+                    'sCdAvisoRecebimento' => 'N',
+                    'StrRetorno' => 'xml',
+                );
+                //url do serviço do correio
+                $url = 'http://ws.correios.com.br/calculador/CalcPrecoprazo.aspx';
+                
+                $data = http_build_query($data);
+                
+                $ch = curl_init($url.'?'.$data);
+                curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+                $r = curl_exec($ch);
+                $r = $implexml_load_string($r);
+                
+                $array['price'] = current($r->cServico->Valor);
+                $array['date'] = current($r->cServico->PrazoEntrega);
+                
+                return $array;
+            }
     
 }
