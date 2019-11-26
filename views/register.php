@@ -18,7 +18,7 @@
         
     <!-- Login Form -->    
     <div class="container-fluid">
-        <form action="register_proc.php" method="POST">
+        <form action="register_proc" method="POST">
             
         <div class="form-group">
           <div class="form-group">

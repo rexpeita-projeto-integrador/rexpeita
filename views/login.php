@@ -1,3 +1,12 @@
+<?php
+
+if((!isset ($_SESSION['email']) == true) && (isset ($_SESSION['password']) == true))
+{
+  header('location:myaccount');
+}
+
+?>
+
 <html>
     
     <head>
@@ -18,7 +27,7 @@
         
     <!-- Login Form -->    
     <div class="container-fluid">
-        <form action="login_proc.php" method="POST">
+        <form action="login_proc" method="POST">
           <div class="form-group">
             <label for="Email"><b>Email:</b></label>
             <input type="email" name="email" class="form-control" placeholder="Digite seu Email aqui..." required>
