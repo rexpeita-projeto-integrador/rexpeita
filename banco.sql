@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 22-Out-2019 às 19:25
+-- Generation Time: 26-Nov-2019 às 18:35
 -- Versão do servidor: 10.1.37-MariaDB
 -- versão do PHP: 7.3.1
 
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `banco`
+-- Database: `yuri_loja_carrinho`
 --
 
 -- --------------------------------------------------------
@@ -41,33 +41,7 @@ INSERT INTO `brands` (`id`, `name`) VALUES
 (1, 'LG'),
 (2, 'Samsung'),
 (3, 'AOC'),
-(4, 'Onepower'),
-(5, 'Amd'),
-(6, 'Intel'),
-(7, 'AsRock'),
-(8, 'Asus'),
-(9, 'Biostar'),
-(10, 'EVGA'),
-(11, 'Gigabyte'),
-(12, 'MSI'),
-(13, 'Corsair'),
-(14, 'Crucial'),
-(15, 'Kingston'),
-(16, 'Team Group'),
-(17, 'NVIDIA'),
-(18, 'Galax'),
-(20, 'Zotac'),
-(21, 'Seagate'),
-(22, 'Toshiba'),
-(23, 'Pichau'),
-(24, 'Aerocool'),
-(25, 'Cooler Master'),
-(26, 'HP'),
-(27, 'Logitech'),
-(28, 'Razer'),
-(29, 'Redragon'),
-(30, 'DT3'),
-(31, 'DXRacer');
+(4, 'Apple');
 
 -- --------------------------------------------------------
 
@@ -87,10 +61,11 @@ CREATE TABLE `categories` (
 
 INSERT INTO `categories` (`id`, `sub`, `name`) VALUES
 (6, NULL, 'Monitor'),
-(8, NULL, 'Processador'),
-(9, NULL, 'Memória ram'),
-(10, NULL, 'Placa mãe'),
-(11, NULL, 'HD');
+(14, NULL, 'Som'),
+(15, 14, 'Headphones'),
+(16, 14, 'Microfones'),
+(17, 15, 'Com Fio'),
+(18, 15, 'Sem Fio');
 
 -- --------------------------------------------------------
 
@@ -123,7 +98,7 @@ CREATE TABLE `options` (
 INSERT INTO `options` (`id`, `name`) VALUES
 (1, 'Cor'),
 (2, 'Tamanho'),
-(3, 'Mem?ria RAM'),
+(3, 'Memória RAM'),
 (4, 'Polegadas');
 
 -- --------------------------------------------------------
@@ -158,22 +133,27 @@ CREATE TABLE `products` (
   `sale` tinyint(1) NOT NULL,
   `bestseller` tinyint(1) NOT NULL,
   `new_product` tinyint(1) NOT NULL,
-  `options` varchar(200) DEFAULT NULL
+  `options` varchar(200) DEFAULT NULL,
+  `weight` float NOT NULL,
+  `width` float NOT NULL,
+  `height` float NOT NULL,
+  `length` float NOT NULL,
+  `diameter` float NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Extraindo dados da tabela `products`
 --
 
-INSERT INTO `products` (`id`, `id_category`, `id_brand`, `name`, `description`, `stock`, `price`, `price_from`, `rating`, `featured`, `sale`, `bestseller`, `new_product`, `options`) VALUES
-(1, 6, 1, 'Monitor 21 polegadas', 'Alguma descri??o do produto.', 10, 499, 599, 0, 0, 1, 1, 0, NULL),
-(2, 6, 2, 'Monitor 18 polegadas', 'Alguma outra descri??o', 10, 399, 999, 0, 0, 0, 1, 0, NULL),
-(3, 6, 2, 'Monitor 19 polegadas', 'Alguma outra descri??o', 10, 599, 699, 0, 0, 0, 0, 1, NULL),
-(4, 6, 3, 'Monitor 17 polegadas', 'Alguma outra descri??o', 10, 779, 900, 0, 0, 0, 0, 0, NULL),
-(5, 6, 1, 'Monitor 20 polegadas', 'Alguma outra descri??o', 10, 299, 499, 0, 0, 0, 0, 1, NULL),
-(6, 6, 3, 'Monitor 20 polegadas', 'Alguma outra descri??o', 10, 699, 0, 0, 0, 0, 0, 0, NULL),
-(7, 6, 3, 'Monitor 19 polegadas', 'Alguma outra descri??o', 10, 889, 999, 0, 0, 0, 0, 0, NULL),
-(8, 6, 1, 'Monitor 18 polegadas', 'Alguma outra descri??o', 10, 599, 699, 0, 0, 0, 0, 0, NULL);
+INSERT INTO `products` (`id`, `id_category`, `id_brand`, `name`, `description`, `stock`, `price`, `price_from`, `rating`, `featured`, `sale`, `bestseller`, `new_product`, `options`, `weight`, `width`, `height`, `length`, `diameter`) VALUES
+(1, 6, 1, 'Monitor 21 polegadas', 'Alguma descrição do produto.', 10, 499, 599, 0, 1, 1, 1, 0, '1,2,4', 0.9, 20, 15, 20, 15),
+(2, 6, 2, 'Monitor 18 polegadas', 'Alguma outra descrição', 10, 399, 999, 2, 1, 1, 1, 0, '1,2', 0.8, 20, 15, 20, 15),
+(3, 6, 2, 'Monitor 19 polegadas', 'Alguma outra descrição', 10, 599, 699, 0, 1, 0, 0, 1, '1,2', 0.7, 20, 15, 20, 15),
+(4, 6, 3, 'Monitor 17 polegadas', 'Alguma outra descrição', 10, 3779, 900, 2, 1, 0, 0, 0, '1,4', 0.6, 20, 15, 20, 15),
+(5, 6, 1, 'Monitor 20 polegadas', 'Alguma outra descrição', 10, 299, 499, 0, 1, 0, 0, 1, '1', 0.5, 20, 15, 20, 15),
+(6, 6, 3, 'Monitor 20 polegadas', 'Alguma outra descrição', 10, 699, 0, 0, 1, 0, 0, 0, '1,2,4', 0.4, 20, 15, 20, 15),
+(7, 6, 3, 'Monitor 19 polegadas', 'Alguma outra descrição', 10, 889, 999, 5, 1, 1, 0, 0, '2,4', 0.3, 20, 15, 20, 15),
+(8, 6, 1, 'Monitor 18 polegadas', 'Alguma outra descrição', 10, 599, 699, 0, 1, 0, 0, 0, '4', 0.2, 20, 15, 20, 15);
 
 -- --------------------------------------------------------
 
@@ -199,7 +179,10 @@ INSERT INTO `products_images` (`id`, `id_product`, `url`) VALUES
 (5, 5, '1.jpg'),
 (6, 6, '3.jpg'),
 (7, 7, '7.jpg'),
-(8, 8, '7.jpg');
+(8, 8, '7.jpg'),
+(9, 2, '3.jpg'),
+(10, 2, '4.jpg'),
+(11, 2, '7.jpg');
 
 -- --------------------------------------------------------
 
@@ -213,6 +196,19 @@ CREATE TABLE `products_options` (
   `id_option` int(11) NOT NULL,
   `p_value` varchar(100) NOT NULL DEFAULT ''
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Extraindo dados da tabela `products_options`
+--
+
+INSERT INTO `products_options` (`id`, `id_product`, `id_option`, `p_value`) VALUES
+(1, 1, 1, 'Azul'),
+(2, 1, 2, '23cm'),
+(3, 1, 4, '21'),
+(4, 2, 1, 'Azul'),
+(5, 2, 2, '19cm'),
+(6, 3, 1, 'Vermelho'),
+(7, 3, 2, '19cm');
 
 -- --------------------------------------------------------
 
@@ -270,6 +266,14 @@ CREATE TABLE `rates` (
   `comment` text
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Extraindo dados da tabela `rates`
+--
+
+INSERT INTO `rates` (`id`, `id_product`, `id_user`, `date_rated`, `points`, `comment`) VALUES
+(1, 2, 1, '2017-01-01 00:00:00', 2, 'Produto muito legal.'),
+(2, 2, 1, '2017-01-02 00:00:00', 2, 'Produto meio ruim.');
+
 -- --------------------------------------------------------
 
 --
@@ -279,8 +283,16 @@ CREATE TABLE `rates` (
 CREATE TABLE `users` (
   `id` int(11) UNSIGNED NOT NULL,
   `email` varchar(100) NOT NULL DEFAULT '',
-  `password` varchar(32) NOT NULL DEFAULT ''
+  `password` varchar(32) NOT NULL DEFAULT '',
+  `name` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Extraindo dados da tabela `users`
+--
+
+INSERT INTO `users` (`id`, `email`, `password`, `name`) VALUES
+(1, 'suporte@b7web.com.br', '698dc19d489c4e4db73e28a713eab07b', 'Bonieky Lacerda');
 
 --
 -- Indexes for dumped tables
@@ -372,13 +384,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `brands`
 --
 ALTER TABLE `brands`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `coupons`
@@ -408,13 +420,13 @@ ALTER TABLE `products`
 -- AUTO_INCREMENT for table `products_images`
 --
 ALTER TABLE `products_images`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `products_options`
 --
 ALTER TABLE `products_options`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `purchases`
@@ -438,13 +450,13 @@ ALTER TABLE `purchase_transactions`
 -- AUTO_INCREMENT for table `rates`
 --
 ALTER TABLE `rates`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
