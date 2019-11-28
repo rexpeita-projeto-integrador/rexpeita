@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 26-Nov-2019 às 21:13
+-- Generation Time: 26-Nov-2019 às 18:35
 -- Versão do servidor: 10.1.37-MariaDB
 -- versão do PHP: 7.3.1
 
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `rexpeitav2`
+-- Database: `yuri_loja_carrinho`
 --
 
 -- --------------------------------------------------------
@@ -133,22 +133,27 @@ CREATE TABLE `products` (
   `sale` tinyint(1) NOT NULL,
   `bestseller` tinyint(1) NOT NULL,
   `new_product` tinyint(1) NOT NULL,
-  `options` varchar(200) DEFAULT NULL
+  `options` varchar(200) DEFAULT NULL,
+  `weight` float NOT NULL,
+  `width` float NOT NULL,
+  `height` float NOT NULL,
+  `length` float NOT NULL,
+  `diameter` float NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Extraindo dados da tabela `products`
 --
 
-INSERT INTO `products` (`id`, `id_category`, `id_brand`, `name`, `description`, `stock`, `price`, `price_from`, `rating`, `featured`, `sale`, `bestseller`, `new_product`, `options`) VALUES
-(1, 6, 1, 'Monitor 21 polegadas', 'Alguma descrição do produto.', 10, 499, 599, 0, 1, 1, 1, 0, '1,2,4'),
-(2, 6, 2, 'Monitor 18 polegadas', 'Alguma outra descrição', 10, 399, 999, 2, 1, 1, 1, 0, '1,2'),
-(3, 6, 2, 'Monitor 19 polegadas', 'Alguma outra descrição', 10, 599, 699, 0, 1, 0, 0, 1, '1,2'),
-(4, 6, 3, 'Monitor 17 polegadas', 'Alguma outra descrição', 10, 3779, 900, 2, 1, 0, 0, 0, '1,4'),
-(5, 6, 1, 'Monitor 20 polegadas', 'Alguma outra descrição', 10, 299, 499, 0, 1, 0, 0, 1, '1'),
-(6, 6, 3, 'Monitor 20 polegadas', 'Alguma outra descrição', 10, 699, 0, 0, 1, 0, 0, 0, '1,2,4'),
-(7, 6, 3, 'Monitor 19 polegadas', 'Alguma outra descrição', 10, 889, 999, 5, 1, 1, 0, 0, '2,4'),
-(8, 6, 1, 'Monitor 18 polegadas', 'Alguma outra descrição', 10, 599, 699, 0, 1, 0, 0, 0, '4');
+INSERT INTO `products` (`id`, `id_category`, `id_brand`, `name`, `description`, `stock`, `price`, `price_from`, `rating`, `featured`, `sale`, `bestseller`, `new_product`, `options`, `weight`, `width`, `height`, `length`, `diameter`) VALUES
+(1, 6, 1, 'Monitor 21 polegadas', 'Alguma descrição do produto.', 10, 499, 599, 0, 1, 1, 1, 0, '1,2,4', 0.9, 20, 15, 20, 15),
+(2, 6, 2, 'Monitor 18 polegadas', 'Alguma outra descrição', 10, 399, 999, 2, 1, 1, 1, 0, '1,2', 0.8, 20, 15, 20, 15),
+(3, 6, 2, 'Monitor 19 polegadas', 'Alguma outra descrição', 10, 599, 699, 0, 1, 0, 0, 1, '1,2', 0.7, 20, 15, 20, 15),
+(4, 6, 3, 'Monitor 17 polegadas', 'Alguma outra descrição', 10, 3779, 900, 2, 1, 0, 0, 0, '1,4', 0.6, 20, 15, 20, 15),
+(5, 6, 1, 'Monitor 20 polegadas', 'Alguma outra descrição', 10, 299, 499, 0, 1, 0, 0, 1, '1', 0.5, 20, 15, 20, 15),
+(6, 6, 3, 'Monitor 20 polegadas', 'Alguma outra descrição', 10, 699, 0, 0, 1, 0, 0, 0, '1,2,4', 0.4, 20, 15, 20, 15),
+(7, 6, 3, 'Monitor 19 polegadas', 'Alguma outra descrição', 10, 889, 999, 5, 1, 1, 0, 0, '2,4', 0.3, 20, 15, 20, 15),
+(8, 6, 1, 'Monitor 18 polegadas', 'Alguma outra descrição', 10, 599, 699, 0, 1, 0, 0, 0, '4', 0.2, 20, 15, 20, 15);
 
 -- --------------------------------------------------------
 
@@ -167,17 +172,17 @@ CREATE TABLE `products_images` (
 --
 
 INSERT INTO `products_images` (`id`, `id_product`, `url`) VALUES
-(1, 1, '1.png'),
-(2, 2, '2.png'),
-(3, 3, '3.png'),
-(4, 4, '4.png'),
-(5, 5, '5.png'),
-(6, 6, '6.jpg'),
-(7, 7, '7.png'),
-(8, 8, '8.png'),
-(9, 2, '3.png'),
-(10, 2, '4.png'),
-(11, 2, '7.png');
+(1, 1, '1.jpg'),
+(2, 2, '2.jpg'),
+(3, 3, '3.jpg'),
+(4, 4, '4.jpg'),
+(5, 5, '1.jpg'),
+(6, 6, '3.jpg'),
+(7, 7, '7.jpg'),
+(8, 8, '7.jpg'),
+(9, 2, '3.jpg'),
+(10, 2, '4.jpg'),
+(11, 2, '7.jpg');
 
 -- --------------------------------------------------------
 
