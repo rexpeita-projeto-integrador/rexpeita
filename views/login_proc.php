@@ -1,28 +1,25 @@
 <?php
 
-session_start();
+$mysqli = new mysqli('localhost','root','', 'rexpeita') or die(mysqli_error($mysqli));
 
-$con = mysqli_connect('localhost','root','');
-
-mysqli_select_db($con, 'rexpeitav2');
-
-$id = $_POST['id'];
 $email = $_POST['email'];
 $password = $_POST['password'];
 
-$s = "SELECT * FROM login WHERE email = '$email' && password = '$password' ";
+$login = "SELECT * FROM users WHERE email = '$email' && password = '$password' ";
 
-$result = mysqli_query($con, $s);
+$result = mysqli_query($mysqli, $login);
 
 $num = mysqli_num_rows($result);
 
 if($num == 1) {
     $_SESSION['email'] = $email;
     $_SESSION['password'] = $password;
-    $_SESSION['id'] = $id;
-    header('location:home.php');
+    header('location:myaccount');
+    
 } else {
-    header('location:login.php');
+    unset($_SESSION['email']);
+    unset($_SESSION['password']);
+    header('location:login');
 }
     
 ?>
