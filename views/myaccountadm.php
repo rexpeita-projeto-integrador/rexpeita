@@ -16,7 +16,7 @@ $logado = $_SESSION['email'];
 <body>
 
 <?php
-  echo" Bem vindo $logado";
+  echo" Bem vindo ADMIN: $logado";
 ?>
 
 <?php
@@ -26,6 +26,7 @@ var_dump($_SESSION);
 echo '</pre>';
 ?>
 
+<a href="crud"><button class="btn btn-danger">Ir para o CRUD</button></a>
 
     
 </body>
