@@ -4,6 +4,7 @@ $mysqli = new mysqli('localhost','root','', 'rexpeita') or die(mysqli_error($mys
 
 $email = $_POST['email'];
 $password = $_POST['password'];
+$password = hash("sha256", $password);
 
 $login = "SELECT * FROM users WHERE email = '$email' && password = '$password' ";
 $verifica = "SELECT * FROM users WHERE administra = '$verifica' ";
