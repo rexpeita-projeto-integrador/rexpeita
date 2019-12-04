@@ -3,14 +3,8 @@
     <head>
         <!-- Page Title -->
         <title>Criação de Conta - Rexpeita</title>
-        
+		<link rel="stylesheet" href="<?php echo BASE_URL; ?>assets/css/style.css" type="text/css" />
     </head>
-    
-    <style>
-        body {
-        background-color: white;
-        }
-    </style>
     
     <body>
         
@@ -35,12 +29,15 @@
             <label for="InputPassword">Senha:</label>
             <input type="password" name="password" class="form-control" placeholder="Digite sua Senha aqui...">
           </div>
-            Nós nunca compartilharemos suas Informações.
+            <small id="emailHelp" class="form-text text-muted">
+                Nós nunca compartilharemos suas Informações.
+            </small>
+        
             <br>
           </div>
             
-          <button type="submit" class="btn btn-primary">Registrar Conta</button>
-        </div>
+          <button type="submit" class="btn x">Registrar Conta</button>
+
         </form>
     </div>
     <!-- Login Form End -->             

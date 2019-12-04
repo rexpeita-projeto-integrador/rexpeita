@@ -14,7 +14,7 @@ body {
 .topnav .navbar-nav>li>a {
 	padding-top:10px;
     padding-bottom:10px;
-    color:white;
+    color:#b8b8b8;
 }
 .topnav .nav>li>a:hover,
 .dropdown.open .dropdown-toggle {
@@ -276,19 +276,26 @@ footer h3 {
 	background-color: #3D3D3D;
     padding: 17px 0;
     line-height: 30px;
-    color: black;
+    color: white;
 }
 .copyright span {
-	color:black;
+	color:white;
 }
-.payments {
+.pa {
 	text-align: right;
 }
-.payments img {
+.payments{
 	height:30px;
-	background-color:black;
+	background-color:white;
 	border-radius:4px;
 	margin-right:3px;
+}
+.px{
+    height:  30px;
+    width: 40px;
+    background-color:white;
+	border-radius:4px;
+    
 }
 .no-padding {
 	padding:0;
@@ -298,6 +305,7 @@ footer h3 {
 .product_item {
 	padding:10px;
 	border:1px solid black;
+    border-radius: 2px;
 }
 .product_item:hover {
 	border:1px solid black;
@@ -608,11 +616,17 @@ footer h3 {
     background-repeat: no-repeat;
 
 }
-
-
-
-
-
+.form-control{
+    border-radius: 2px;
+    border-color: black;
+}
+.x{
+    background-color: #DC0000;
+    color: white;
+}
+.form-text{
+    color: black;
+}
 
 
 

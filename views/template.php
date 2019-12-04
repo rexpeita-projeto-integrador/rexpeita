@@ -128,35 +128,7 @@
         <br>
        <br>
        <br>
-               <!-- Slideshow container -->
-        <div class="slideshow-container">
-
-            <!-- Full-width images with number and caption text -->
-            <div class="mySlides img-max">
-                <div class="numbertext"></div>
-                <img src="assets/images/2970x.jpg" style="width:500px;">
-                <div class="text"></div>
-            </div>
-
-            <div class="mySlides img-max">
-                <div class="numbertext"></div>
-                <img src="assets/images/a320m.jpg" style="width:500px;">
-                <div class="text"> </div>
-            </div>
-
-            <div class="mySlides img-max">
-                <div class="numbertext"></div>
-                <img src="assets/images/a320.jpg" style="width:500px;">
-                <div class="text"></div>
-            </div>
-
-            <!-- Next and previous buttons -->
-            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-            <a class="next" onclick="plusSlides(1)">&#10095;</a>
-        </div>
-        <br>
-
-        <div class="container-fluid bg-dark" style="height: 30px;"></div>
+             
        
 		<section>
 			<div class="container">
@@ -276,11 +248,9 @@
 	    			<div class="row">
 						<div class="col-sm-6">© <span>Loja 2.0</span> - <?php $this->lang->get('ALLRIGHTRESERVED'); ?>.</div>
 						<div class="col-sm-6">
-							<div class="payments">
-								<img src="<?php echo BASE_URL; ?>assets/images/visa.png" />
-								<img src="<?php echo BASE_URL; ?>assets/images/visa.png" />
-								<img src="<?php echo BASE_URL; ?>assets/images/visa.png" />
-								<img src="<?php echo BASE_URL; ?>assets/images/visa.png" />
+							<div class="pa">
+								<img class="payments" src="<?php echo BASE_URL; ?>assets/images/visa.png" />
+								<img class="px" src="<?php echo BASE_URL; ?>assets/images/card.png" />
 							</div>
 						</div>
 					</div>

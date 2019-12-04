@@ -8,16 +8,17 @@ if((!isset ($_SESSION['email']) == true) && (isset ($_SESSION['password']) == tr
 ?>
 
 <html>
+   
     
     <head>
         <!-- Page Title -->
         <title>Acessar Minha Conta - Rexpeita</title>
-        
+		<link rel="stylesheet" href="<?php echo BASE_URL; ?>assets/css/style.css" type="text/css" />
     </head>
     
     <style>
         body {
-        background-color: white;
+        background-color: #b8b8b8;
         }
     </style>
     
@@ -38,10 +39,10 @@ if((!isset ($_SESSION['email']) == true) && (isset ($_SESSION['password']) == tr
             <input type="password" name="password" class="form-control" placeholder="Digite sua Senha aqui..." required>
           </div>
 
-          <button type="submit" class="btn btn-danger">Logar</button>
+          <button type="submit" class="btn x">Logar</button>
         </form>
         <br>
-        <a href="register"><button class="btn btn-danger">Criar Conta</button></a>
+        <a href="register"><button class="btn x">Criar Conta</button></a>
     </div>
     <!-- Login Form End -->    
     <br>    
