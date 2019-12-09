@@ -3,7 +3,7 @@
 $mysqli = new mysqli('localhost','root','', 'rexpeita') or die(mysqli_error($mysqli));
 
 $email = $_POST['email'];
-$password = $_POST['password'];
+$password = md5($_POST['password']);
 
 $login = "SELECT * FROM users WHERE email = '$email' && password = '$password' ";
 
