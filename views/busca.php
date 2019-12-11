@@ -1,3 +1,5 @@
+<h1>Você está procurando por: "<?php echo $searchTerm; ?>"</h1>
+
 <div class="row">
 <?php
 $a = 0;
