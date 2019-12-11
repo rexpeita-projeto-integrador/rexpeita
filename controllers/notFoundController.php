@@ -1,14 +1,14 @@
 <?php
-class notFoundController extends controller {
 
-    public function __construct() {
-        parent::__construct();
-    }
-
-    public function index() {
-        $dados = array();
+    class notFoundController extends controller {
         
-        $this->loadView('404', $dados);
+        public function __construct() {
+            parent::__construct();
+        }
+        
+        public function index() {
+            $dados = array();
+            
+            $this->loadview('404', $dados);
+        }
     }
-
-}
