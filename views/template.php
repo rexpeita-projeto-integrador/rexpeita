@@ -12,6 +12,7 @@
 		<link rel="stylesheet" href="<?php echo BASE_URL; ?>assets/css/style.css" type="text/css" />
 	</head>
 	<body>
+	
 		<nav class="navbar topnav">
 			<div class="container">
 				<ul class="nav navbar-nav">
@@ -30,8 +31,8 @@
 					<li><a href="<?php echo BASE_URL; ?>login"><?php $this->lang->get('LOGIN'); ?></a></li>
 				</ul>
 			</div>
-		</nav>
-		<header>
+        </nav>
+		<header >
 			<div class="container">
 				<div class="row">
 					<div class="col-sm-2 logo">
@@ -71,8 +72,8 @@
 					<div class="col-sm-3">
 						<a href="<?php echo BASE_URL; ?>cart">
 							<div class="cartarea">
+                				<div class="cartqt"><?php echo $viewData['cart_qt']; ?></div>
 								<div class="carticon">
-									<div class="cartqt"><?php echo $viewData['cart_qt']; ?></div>
 								</div>
 								<div class="carttotal">
 									<?php $this->lang->get('CART'); ?>:<br/>
@@ -118,6 +119,17 @@
 				</div>
 			</nav>
 		</div>
+            
+        <!-- Banner -->
+        <div class="container" alt="banner" title="Propaganda">
+            <img class='banner' height="90px" width="100%" align='center'>
+        </div>
+        <!-- Banner End -->
+        <br>
+       <br>
+       <br>
+             
+       
 		<section>
 			<div class="container">
 				<div class="row">
@@ -173,11 +185,11 @@
 						<div class="col-xs-12 col-sm-8 col-sm-offset-2 no-padding">
 
 
-<form action="//b7web.us2.list-manage.com/subscribe/post?u=0d44bd14b441c2648668c0c5c&amp;id=156305bc7f" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" novalidate>
-    <input type="email" value="" name="EMAIL" class="subemail required email" id="mce-EMAIL" placeholder="<?php $this->lang->get('SUBSCRIBETEXT'); ?>">
-	<input type="hidden" name="b_0d44bd14b441c2648668c0c5c_156305bc7f" tabindex="-1" value="">
-    <input type="submit" value="<?php $this->lang->get('SUBSCRIBEBUTTON'); ?>" name="subscribe" id="mc-embedded-subscribe" class="button">
-</form>
+    <form action="//b7web.us2.list-manage.com/subscribe/post?u=0d44bd14b441c2648668c0c5c&amp;id=156305bc7f" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" novalidate>
+        <input type="email" value="" name="EMAIL" class="subemail required email" id="mce-EMAIL" placeholder="<?php $this->lang->get('SUBSCRIBETEXT'); ?>">
+	    <input type="hidden" name="b_0d44bd14b441c2648668c0c5c_156305bc7f" tabindex="-1" value="">
+        <input type="submit" value="<?php $this->lang->get('SUBSCRIBEBUTTON'); ?>" name="subscribe" id="mc-embedded-subscribe" class="button">
+    </form>
 
 						</div>
 					</div>
@@ -236,11 +248,9 @@
 	    			<div class="row">
 						<div class="col-sm-6">© <span>Loja 2.0</span> - <?php $this->lang->get('ALLRIGHTRESERVED'); ?>.</div>
 						<div class="col-sm-6">
-							<div class="payments">
-								<img src="<?php echo BASE_URL; ?>assets/images/visa.png" />
-								<img src="<?php echo BASE_URL; ?>assets/images/visa.png" />
-								<img src="<?php echo BASE_URL; ?>assets/images/visa.png" />
-								<img src="<?php echo BASE_URL; ?>assets/images/visa.png" />
+							<div class="pa">
+								<img class="payments" src="<?php echo BASE_URL; ?>assets/images/visa.png" />
+								<img class="px" src="<?php echo BASE_URL; ?>assets/images/card.png" />
 							</div>
 						</div>
 					</div>
@@ -248,11 +258,37 @@
 	    	</div>
 	    </footer>
 		<script type="text/javascript">
+            
 		var BASE_URL = '<?php echo BASE_URL; ?>';
 		<?php if(isset($viewData['filters'])): ?>
-		var maxslider = <?php echo $viewData['filters']['maxslider']; ?>;
+            
+		  var maxslider = <?php echo $viewData['filters']['maxslider']; ?>;
+          
 		<?php endif; ?>
+        
 		</script>
+		
+		<script type="text/javascript">
+            
+             var slideIndex = 0;
+            showSlides();
+
+            function showSlides() {
+                var i;
+                var slides = document.getElementsByClassName("mySlides");
+                for (i = 0; i < slides.length; i++) {
+                    slides[i].style.display = "none";
+                }
+                slideIndex++;
+                if (slideIndex > slides.length) {
+                    slideIndex = 1
+                }
+                slides[slideIndex - 1].style.display = "block";
+                setTimeout(showSlides, 2000); // Change image every 2 seconds
+            }
+            
+        </script>
+        
 		<script type="text/javascript" src="<?php echo BASE_URL; ?>assets/js/jquery.min.js"></script>
 		<script type="text/javascript" src="<?php echo BASE_URL; ?>assets/js/jquery-ui.min.js"></script>
 		<script type="text/javascript" src="<?php echo BASE_URL; ?>assets/js/bootstrap.min.js"></script>
