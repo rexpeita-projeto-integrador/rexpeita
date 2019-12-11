@@ -9,3 +9,5 @@ $password = md5($password);
 $mysqli->query("INSERT INTO users (email, password) VALUES('$email', '$password')") or die($mysqli->error);
     
 ?>
+
+<a href="login"><button class="btn btn-danger">Ir para o Login</button></a>

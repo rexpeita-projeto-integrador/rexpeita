@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta charset="utf-8" />
-		<title>Loja 2.0</title>
+		<title>Rexpeita 3.0</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link href="//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet" type="text/css">
 		<link rel="stylesheet" href="<?php echo BASE_URL; ?>assets/css/bootstrap.min.css" type="text/css" />
@@ -40,7 +40,7 @@
 					</div>
 					<div class="col-sm-7">
 						<div class="head_help">(11) 9999-9999</div>
-						<div class="head_email">contato@<span>loja2.com.br</span></div>
+						<div class="head_email">contato@<span>rexpeita.com.br</span></div>
 						
 						<div class="search_area">
 							<form action="<?php echo BASE_URL; ?>busca" method="GET">
@@ -289,6 +289,7 @@
             
         </script>
         
+		<script type="text/javascript">var BASE_URL = '<?php echo BASE_URL; ?>';</script>
 		<script type="text/javascript" src="<?php echo BASE_URL; ?>assets/js/jquery.min.js"></script>
 		<script type="text/javascript" src="<?php echo BASE_URL; ?>assets/js/jquery-ui.min.js"></script>
 		<script type="text/javascript" src="<?php echo BASE_URL; ?>assets/js/bootstrap.min.js"></script>

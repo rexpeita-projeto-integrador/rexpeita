@@ -2,31 +2,27 @@
 
 $mysqli = new mysqli('localhost','root','', 'rexpeita') or die(mysqli_error($mysqli));
 
-$email = $_POST['email'];
-$password = $_POST['password'];
+$email = mysqli_real_escape_string($mysqli, $_POST["email"]);  
+$password = mysqli_real_escape_string($mysqli, $_POST["password"]);  
+$password = md5($password); 
 
-$login = "SELECT * FROM users WHERE email = '$email' && password = '$password' ";
-$verifica = "SELECT * FROM users WHERE administra = '$verifica' ";
-$resultverifica = mysqli_query($mysqli, $verifica);
+$query = "SELECT * FROM users WHERE email = '$email' && password = '$password' ";
 
-$result = mysqli_query($mysqli, $login);
+$result = mysqli_query($mysqli, $query);
 
 $num = mysqli_num_rows($result);
 
 if($num == 1) {
     $_SESSION['email'] = $email;
     $_SESSION['password'] = $password;
-        if($resultverifica == 1)
-        {
-            header("Location:myaccountadm");
-        } else {
-            header("Location:home");
-        }
+    header('location:myaccount');
+    
 } else {
     unset($_SESSION['email']);
     unset($_SESSION['password']);
     header('location:login');
 }
-
-
+    
 ?>
+
+<a href="myaccount"><button class="btn btn-danger">Ir para minha Conta</button></a>
